@@ -99,5 +99,5 @@ Link:  https://50projects50days.com/projects/custom-range-slider/
 
 
 
+### **Not**: Saadettin reiz bu dökümanda değişiklik yapma hakkını saklı tutar.
 
-**Not**: Saadettin reiz bu dökümanda değişiklik yapma hakkını saklı tutar.
