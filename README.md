@@ -24,7 +24,7 @@ Proje kapsamında yapılacak işlerin detayı aşağıdaki gibidir;
 ### Proje Materyalleri  :wrench:
 
 Programlama Dilleri:  Javascript,HTML,CSS  
-Frameworkler:  Vue.js, Bootstrap
+Frameworkler:  Vue.js, Bootstrap 
 Kütüphaneler:
 
 #### Mini Projeler
