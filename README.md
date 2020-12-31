@@ -25,7 +25,7 @@ Proje kapsamında yapılacak işlerin detayı aşağıdaki gibidir;
 
 Programlama Dilleri:  Javascript,HTML,CSS  
 Frameworkler:  Vue.js,Bootstrap
-Kütüphaneler:
+Kütüphaneler: *Belirsiz*
 
 #### Mini Projeler
 
