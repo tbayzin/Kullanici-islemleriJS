@@ -7,7 +7,8 @@
 
 ### Projenin Konusu  :orange_book:
 
-Javascript kullanarak temel bir Üye Kayıt sistemi yapılması ve içine belli featureler eklenmesi. Kayıt sisteminin tasarımına da özen gösterilmesi.
+Kullanıcılar tarafından kişilerin eklenebileceği, listelenebileceği ve kişilerin güncellenebileceği bir kişi listesi. Burda önemli olan Javascript bilgimizin gelişmesi ve aynı zamanda projelerde frontend işlerini yapacağımız için görselliğe önem vermemizi sağlamak.
+
 
 Projenin asıl konusu yukarıdaki gibi olmakla beraber bu amaca önceden belirlenen mini projeler yardımıyla ulaşılacaktır.
 Bahsi geçen projelere Proje Materyalleri kısmında göz atılabilir.
@@ -17,17 +18,19 @@ Bahsi geçen projelere Proje Materyalleri kısmında göz atılabilir.
 
 Proje kapsamında yapılacak işlerin detayı aşağıdaki gibidir;
 
- Kullanıcıdan input olarak üye bilgilerinin alınıp bir kaynağa kaydedilmesi. (notepad,excel vs)
- Kullanıcıdan alınmış bu bilgilerin bazılarıyla arayüzden arama işlemi yapılabilmesi.
+Kullanıcılar tarafından gerekli bilgiler(ad,soyad, telefon, fotoğraf vb) girilerek kişiler eklenebilecek, eklenen kişiler istenilen sıraya göre listelenebilecek, silinebilecek ve güncellenebilecek. Aynı zamanda bu bilgiler bir dosya üzerine yazdırılacak.
+
  Yukarıda bahsi geçen işin asıl amaçlarından birinin front-end olduğu için tasarıma dikkat edilmesi.
 
 ### Proje Materyalleri  :wrench:
 
 Programlama Dilleri:  Javascript,HTML,CSS  
-Frameworkler:  Vue.js,Bootstrap  
-Kütüphaneler: -
 
-#### Mini Projeler
+Frameworkler:  Vue.js
+
+Kütüphaneler: Bootstrap4, vuetify
+
+### Projenin İçine Eklenecek Özellikler İçin Örnek Projeler
 
 **1- Progress Steps**
 
