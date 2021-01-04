@@ -1,13 +1,13 @@
 # :fire:  JS 2020 OCAK PROJESI DOKUMANTASYONU   :boom:
 
 ### Projenin Amacı
- Projenin temel amacı öğrencilere Javascript dilinin HTML,CSS le birlikte kullanımını öğretmek ve front-end işleri yapılabilme yetisi kazandırılmasıdır.
+ Projenin temel amacı öğrencilere Javascript dilinin HTML,CSS ile birlikte kullanımını öğretmek ve front-end işleri yapılabilme yetisi kazandırılmasıdır.
 
   Proje detayları aşağıdaki başlıklarda listelenmiştir.  
 
 ### Projenin Konusu  :orange_book:
 
-Kullanıcılar tarafından kişilerin eklenebileceği, listelenebileceği ve kişilerin güncellenebileceği bir kişi listesi. Burda önemli olan Javascript bilgimizin gelişmesi ve aynı zamanda projelerde frontend işlerini yapacağımız için görselliğe önem vermemizi sağlamak.
+Kullanıcılar tarafından kişilerin eklenebileceği, listelenebileceği ve kişilerin güncellenebileceği bir kişi listesi. Burada önemli olan Javascript bilgimizin gelişmesi ve aynı zamanda projelerde frontend işlerini yapacağımız için görselliğe önem vermemizi sağlamak.
 
 
 Projenin asıl konusu yukarıdaki gibi olmakla beraber bu amaca önceden belirlenen mini projeler yardımıyla ulaşılacaktır.
