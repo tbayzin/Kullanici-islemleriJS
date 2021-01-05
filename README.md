@@ -21,6 +21,36 @@ Proje kapsamında yapılacak işlerin detayı aşağıdaki gibidir;
 Kullanıcılar tarafından gerekli bilgiler(ad,soyad, telefon, fotoğraf vb) girilerek kişiler eklenebilecek, eklenen kişiler istenilen sıraya göre listelenebilecek, silinebilecek ve güncellenebilecek. Aynı zamanda bu bilgiler bir dosya üzerine yazdırılacak.
 
  Yukarıda bahsi geçen işin asıl amaçlarından birinin front-end olduğu için tasarıma dikkat edilmesi.
+ 
+ 1. Sayfa: Kullanıcı Ekleme 
+ 
+     Kullanıcıdan alınacak inputlar:
+   - Ad
+   - Soyad
+   - E-mail
+   - Doğum Yeri
+   - Doğum Tarihi
+   - Fotoğraf
+   
+   
+ 2. Sayfa: Kullanıcı Listeleme ve Arama
+  
+      Listeleme:
+    - Ad 
+    - Soyad 
+    - Doğum Yeri
+    
+     Arama:
+    - Ad ve soyad parametrelerine göre arama
+   
+ 3. Sayfa: Kullanıcı Düzenleme Sayfası
+ 
+    - Düzenleme butonu: düzenleme yapabilme özelliği aktifleşiyor. 
+    - Kaydet butonu: yapılan değişikleri kaydediyor. 
+    - İptale butonu: kaydetmeden geri dönüyor.
+   
+  4. Sayfa Görüntü Sorgulama:
+   - Kullanıcı tarafından bir görsel eklenir sistemde bulunan şahıslardan biri rastgele ekrana bastırılır. Ekrana bastırılan şahsın bilgileri küçük bir frame içinde gösterilir.
 
 ### Proje Materyalleri  :wrench:
 
