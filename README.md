@@ -28,17 +28,20 @@ Kullanıcılar tarafından gerekli bilgiler(ad,soyad, telefon, fotoğraf vb) gir
    - Ad
    - Soyad
    - E-mail
-   - Doğum Yeri
+   - Telefon numarası
    - Doğum Tarihi
-   - Fotoğraf
-   
+   - Fotoğraflar
+  Not: Fotoğraflardan biri kapak fotosu olmalı
    
  2. Sayfa: Kullanıcı Listeleme ve Arama
   
       Listeleme:
     - Ad 
     - Soyad 
-    - Doğum Yeri
+    - E-mail
+    - Telefon numarası
+    - Doğum Tarihi
+    - Fotoğraf
     
      Arama:
     - Ad ve soyad parametrelerine göre arama
@@ -50,8 +53,21 @@ Kullanıcılar tarafından gerekli bilgiler(ad,soyad, telefon, fotoğraf vb) gir
     - İptale butonu: kaydetmeden geri dönüyor.
    
   4. Sayfa Görüntü Sorgulama:
-   - Kullanıcı tarafından bir görsel eklenir sistemde bulunan şahıslardan biri rastgele ekrana bastırılır. Ekrana bastırılan şahsın bilgileri küçük bir frame içinde gösterilir.
-
+   - Kullanıcı tarafından bir görsel eklenir sistemde bulunan ve eşlenen şahıs ekrana bastırılır. Ekrana bastırılan şahsın bilgileri küçük bir modal içinde gösterilir.
+    kişi fotoğrafı yüklenirken:
+    
+    - Fotoğrafın base64'ü çıkarılır.
+    - Bu base64'un md5 hashi oluşturulur.
+    - Bu veriler local storage kaydedilir.
+    
+   Sorgulama yapılırken:
+   
+    - Fotoğraf yüklenir
+    - Fotoğrafın base64'ü çıkarılır.
+    - Bu base64'un md5 hashi oluşturulur.
+    - Bu md5 hash ile local storagedeki hashler karşılaştırılarak sonuç bulunur
+    - Arayüzde gösterilir.
+    
 ### Proje Materyalleri  :wrench:
 
 Programlama Dilleri:  Javascript,HTML,CSS  
