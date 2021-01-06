@@ -1,11 +1,11 @@
 # :fire:  JS 2020 OCAK PROJESI DOKUMANTASYONU   :boom:
 
-### Projenin Amacı
+# Projenin Amacı
  Projenin temel amacı öğrencilere Javascript dilinin HTML,CSS ile birlikte kullanımını öğretmek ve front-end işleri yapılabilme yetisi kazandırılmasıdır.
 
   Proje detayları aşağıdaki başlıklarda listelenmiştir.  
 
-### Projenin Konusu  :orange_book:
+# Projenin Konusu  :orange_book:
 
 Kullanıcılar tarafından kişilerin eklenebileceği, listelenebileceği ve kişilerin güncellenebileceği bir kişi listesi. Burada önemli olan Javascript bilgimizin gelişmesi ve aynı zamanda projelerde frontend işlerini yapacağımız için görselliğe önem vermemizi sağlamak.
 
@@ -14,7 +14,7 @@ Projenin asıl konusu yukarıdaki gibi olmakla beraber bu amaca önceden belirle
 Bahsi geçen projelere Proje Materyalleri kısmında göz atılabilir.
 
 
-### Proje Kapsamı   :book:
+# Proje Kapsamı   :book:
 
 Proje kapsamında yapılacak işlerin detayı aşağıdaki gibidir;
 
@@ -22,61 +22,65 @@ Kullanıcılar tarafından gerekli bilgiler(ad,soyad, telefon, fotoğraf vb) gir
 
  Yukarıda bahsi geçen işin asıl amaçlarından birinin front-end olduğu için tasarıma dikkat edilmesi.
  
- 1. Sayfa: Kullanıcı Ekleme 
- 
-     Kullanıcıdan alınacak inputlar:
+ ## **1.** Sayfa: Kullanıcı Ekleme 
+
+  **Kullanıcıdan alınacak inputlar:**
+
    - Ad
    - Soyad
    - E-mail
    - Telefon numarası
    - Doğum Tarihi
    - Fotoğraflar
-  Not: Fotoğraflardan biri kapak fotosu olmalı
+
+  **NOT:** Fotoğraflardan biri kapak fotoğrafı olmalı
    
- 2. Sayfa: Kullanıcı Listeleme ve Arama
+ ## **2.** Sayfa: Kullanıcı Listeleme ve Arama
   
-      Listeleme:
-    - Ad 
-    - Soyad 
-    - E-mail
-    - Telefon numarası
-    - Doğum Tarihi
-    - Fotoğraf
+  **Listeleme:**
+
+  - Ad 
+  - Soyad 
+  - E-mail
+  - Telefon numarası
+  - Doğum Tarihi
+  - Fotoğraf
     
-     Arama:
-    - Ad ve soyad parametrelerine göre arama
+  **Arama:**
+  - Ad ve soyad parametrelerine göre arama
    
- 3. Sayfa: Kullanıcı Düzenleme Sayfası
+## **3.** Sayfa: Kullanıcı Düzenleme Sayfası
  
-    - Düzenleme butonu: düzenleme yapabilme özelliği aktifleşiyor. 
-    - Kaydet butonu: yapılan değişikleri kaydediyor. 
-    - İptale butonu: kaydetmeden geri dönüyor.
+  - Düzenleme butonu: düzenleme yapabilme özelliği aktifleşiyor. 
+  - Kaydet butonu: yapılan değişikleri kaydediyor. 
+  - İptale butonu: kaydetmeden geri dönüyor.
    
-  4. Sayfa Görüntü Sorgulama:
+## **4.** Sayfa Görüntü Sorgulama:
    - Kullanıcı tarafından bir görsel eklenir sistemde bulunan ve eşlenen şahıs ekrana bastırılır. Ekrana bastırılan şahsın bilgileri küçük bir modal içinde gösterilir.
-    kişi fotoğrafı yüklenirken:
+
+  **Kişi fotoğrafı yüklenirken:**
     
-    - Fotoğrafın base64'ü çıkarılır.
-    - Bu base64'un md5 hashi oluşturulur.
-    - Bu veriler local storage kaydedilir.
+  - Fotoğrafın base64'ü çıkarılır.
+  - Bu base64'un md5 hashi oluşturulur.
+  - Bu veriler local storage kaydedilir.
     
-   Sorgulama yapılırken:
+  **Sorgulama yapılırken:**
    
-    - Fotoğraf yüklenir
-    - Fotoğrafın base64'ü çıkarılır.
-    - Bu base64'un md5 hashi oluşturulur.
-    - Bu md5 hash ile local storagedeki hashler karşılaştırılarak sonuç bulunur
-    - Arayüzde gösterilir.
+  - Fotoğraf yüklenir
+  - Fotoğrafın base64'ü çıkarılır.
+  - Bu base64'un md5 hashi oluşturulur.
+  - Bu md5 hash ile local storagedeki hashler karşılaştırılarak sonuç bulunur
+  - Arayüzde gösterilir.
     
-### Proje Materyalleri  :wrench:
+# Proje Materyalleri  :wrench:
 
-Programlama Dilleri:  Javascript,HTML,CSS  
+**Programlama Dilleri:**  Javascript,HTML,CSS  
 
-Frameworkler:  Vue.js
+**Frameworkler:**  Vue.js
 
-Kütüphaneler: Bootstrap4, vuetify
+**Kütüphaneler:** Bootstrap4, vuetify
 
-### Projenin İçine Eklenecek Özellikler İçin Örnek Projeler
+# Projenin İçine Eklenecek Özellikler İçin Örnek Projeler
 
 **1- Progress Steps**
 
