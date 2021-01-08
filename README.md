@@ -148,6 +148,10 @@ Kişi yaşını belirlemek için kullanılabilecek slider.
 
 Link:  https://50projects50days.com/projects/custom-range-slider/
 
+**11- Palindrome Number**
+
+[Sena'nın reposu için tıklayınız.](https://github.com/akpiinar/javascript-palindrome-number)
+
 
 
 
