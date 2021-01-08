@@ -152,7 +152,7 @@ Link:  https://50projects50days.com/projects/custom-range-slider/
 
 [Sena'nın reposu için tıklayınız.](https://github.com/akpiinar/javascript-palindrome-number)
 
-
+[Tarık repo ](https://github.com/tbayzin/palindrome)
 
 
 
