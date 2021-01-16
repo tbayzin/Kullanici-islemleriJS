@@ -76,6 +76,8 @@
 
 
 	</v-container>
+
+
 </template>
 
 <script>
@@ -113,7 +115,7 @@ export default {
 					subtitle: 'denemeeeeee'
 				},
 				{
-					title: 'kişi Listele',
+					title: 'kişileri Listele',
 					subtitle: 'denemeeeeeeee'
 				},
 			],
@@ -140,4 +142,3 @@ export default {
 
 
 </style>
-
