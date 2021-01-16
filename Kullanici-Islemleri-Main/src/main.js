@@ -3,23 +3,20 @@ import App from './App.vue'
 import vuetify from './plugins/vuetify';
 import VueRouter from 'vue-router'
 
+
+//componentlerimizi import ediyoruz.
 import Dashboard from "@/components/Dashboard";
 import kisiEkle from "@/components/kisiEkle";
 import kisiListesi from "@/components/kisiListesi";
 import kisiYuzSorgulama from "@/components/kisiYuzSorgulama";
-// import kisiEkle from "@/components/kisiEkle";
 
-Vue.use(VueRouter);
+Vue.use(VueRouter); //vue nun routerı kullanmasını sağlıyoruz.
 
 Vue.config.productionTip = false
 
-// const routes =[
-//   {path:'/kisiEkle',components: kisiEkle,name:'kisiEkle'},
-//   {path: '/dashboard',components: Dashboard,name:'dashboard'}
-//
-// ]
-
+//router tanımlıyoruz.
 const router = new VueRouter({
+	//tanımladığımız rotaları spesifikleştirip ilgili url yönlendirmesi için eşleştirmeleri sağlıyoruz.
 	routes: [
 		{
 			path: '/',

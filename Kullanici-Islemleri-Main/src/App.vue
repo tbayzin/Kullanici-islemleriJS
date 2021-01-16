@@ -8,6 +8,7 @@
 				dark
 				flat
 			>
+<!--nav barda bulunan 3 çizgiye tıklandığında sidebarın gösterilip gizleneceği fonksiyon çalışıyor.-->
 				<v-app-bar-nav-icon @click="showOrHideMenu"></v-app-bar-nav-icon>
 			</v-app-bar>
 		</v-row>
@@ -16,6 +17,7 @@
 				<v-card
 					flat
 				>
+<!--					Side Barda bulunan sayfalara tıklandığında url adresine göre ilgili sayfaya yönlendirme yapılması için item.url i döndürüyoruz.-->
 					<v-navigation-drawer
 						permanent
 						:dark="true"
@@ -28,6 +30,7 @@
 								v-for="item in items"
 								:key="item"
 							>
+<!--								alınan linki burada entegre edip sayfaya gitmesi için alıyoruz-->
 								<router-link
 									:to="{path:`${item.url}`}"
 								>
@@ -44,6 +47,7 @@
 				</v-card>
 			</v-col>
 			<v-col lg="10">
+<!--				main.js içinde verdiğimiz path isimlerine göre sayfalara yönlendirmeyi sağlaması için router-view tagını açıyoruz.-->
 				<router-view></router-view>
 			</v-col>
 		</v-row>
@@ -66,6 +70,7 @@ export default {
 	},
 	data() {
 		return {
+			//side bar itemleri,iconları ve url uzantılarını buradan alıyoruz.
 			items: [
 				{title: 'Anasayfa', icon: 'mdi-view-dashboard', url: '/'},
 				{title: 'Kişi Ekle', icon: 'mdi-account-plus', url: '/kisiEkle'},
@@ -76,6 +81,7 @@ export default {
 		}
 	},
 	methods: {
+		//nav barda bulunan üç çizgili icona tıkladığımızda side barın açılıp açılmayacağını bu fonksiyon içerisinde kontrol ediyoruz.
 		showOrHideMenu() {
 			if (this.displayNavBar === "display:none") {
 				this.displayNavBar = "display:block"
