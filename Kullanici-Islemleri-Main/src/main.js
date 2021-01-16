@@ -1,25 +1,55 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
 import App from './App.vue'
 import vuetify from './plugins/vuetify';
-import Kisilerilistele from './components/Kisilerilistele.vue';
-import Dashboard from './components/Dashboard.vue'
+import VueRouter from 'vue-router'
 
-Vue.use(VueRouter);
 
-const routes = [
-	{path: '/kisilerilistele', component: Kisilerilistele},
-	{path: '/', component: Dashboard}
-];
+//componentlerimizi import ediyoruz.
+import Dashboard from "@/components/Dashboard";
+import kisiEkle from "@/components/kisiEkle";
+import kisiListesi from "@/components/kisiListesi";
+import kisiYuzSorgulama from "@/components/kisiYuzSorgulama";
 
-	const router = new VueRouter({
-		routes
-	});
+Vue.use(VueRouter); //vue nun routerı kullanmasını sağlıyoruz.
+
 Vue.config.productionTip = false
 
+//router tanımlıyoruz.
+const router = new VueRouter({
+	//tanımladığımız rotaları spesifikleştirip ilgili url yönlendirmesi için eşleştirmeleri sağlıyoruz.
+	routes: [
+		{
+			path: '/',
+			components: {
+				default: Dashboard,
+			},
+
+		},
+		{
+			path: '/kisiEkle',
+			components: {
+				default: kisiEkle
+			}
+		},
+		{
+			path: '/kisiListesi',
+			components: {
+				default: kisiListesi
+			}
+		},
+		{
+			path:'/kisiYuzSorgulama',
+			components:{
+				default:kisiYuzSorgulama
+			}
+		}
+
+	]
+});
+
+
 new Vue({
-	el: '#app',
-  vuetify,
-  router,
-  render: h => h(App)
+	vuetify,
+	render: h => h(App),
+	router
 }).$mount('#app')

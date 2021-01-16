@@ -4,80 +4,32 @@
 		id="cont"
 	>
 		<v-row>
-			<v-app-bar
-				color="primary"
-				flat
-			>
-				<v-app-bar-nav-icon @click="showOrHideMenu"></v-app-bar-nav-icon>
-			</v-app-bar>
-		</v-row>
-		<v-row>
-			<v-col>
-				<v-card
-					flat
-				>
-					<v-navigation-drawer
-						permanent
-						:dark="true"
-						:style="displayNavBar"
-					>
-						<v-list
-							nav
-						>
-							<v-list-item
-								v-for="item in items"
-								:key="item"
-							>
-								<v-list-item link>
-									<v-list-item-icon>
-										<v-icon>
-											{{ item.icon }}
-										</v-icon>
-									</v-list-item-icon>
-									<v-list-item-title>
-										{{ item.title }}
-									</v-list-item-title>
-								</v-list-item>
-							</v-list-item>
-						</v-list>
-					</v-navigation-drawer>
-				</v-card>
-
-			</v-col>
 			<v-col>
 				<v-row>
 					<v-row lg="4">
 						<v-card
 							class="mx-auto"
 							max-width="400"
-							v-for="cardItems in cards"
-							:key="cardItems"
+							id="card"
+							v-for="cardItem in cardItems"
+							:key="cardItem"
 						>
 							<v-img
 								class="white--text aligin-end"
 								height="200px"
-								src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+								:src=cardItem.image
 							>
 							</v-img>
-							<v-card-subtitle>
-								{{ cardItems.subtitle }}
-							</v-card-subtitle>
+							<v-card-subtitle>{{ cardItem.subtitle }}</v-card-subtitle>
 							<v-card-text class="text--primary">
-								<div>
-									{{ cardItems.title }}
-								</div>
+								<div>{{ cardItem.title }}</div>
 							</v-card-text>
 						</v-card>
 					</v-row>
 				</v-row>
-
 			</v-col>
 		</v-row>
-
-
 	</v-container>
-
-
 </template>
 
 <script>
@@ -87,58 +39,36 @@ export default {
 	data() {
 
 		return {
-			items: [
+			cardItems: [
 				{
 					title: 'Anasayfa',
-					icon: 'mdi-view-dashboard'
+					subtitle: 'dneemeee',
+					image: 'https://cankayacicekcilik.com.tr/images/urun/b_11667829_-beyaz-papatya-kutusu-cicek-siparisi-min.jpg'
 				},
 				{
 					title: 'Kişi Ekle',
-					icon: 'mdi-account-plus'
+					subtitle: 'denemeeeeee',
+					image: 'https://cdn03.ciceksepeti.com/cicek/at4273-1/XL/11-li-kirmizi-gul-cicek-buketi-at4273-1-bf4868a0836d4c5898c8f8a1366ed969.jpg'
 				},
 				{
 					title: 'kişi Listele',
-					icon: 'mdi-account-group'
+					subtitle: 'denemeeeeeeee',
+					image: 'https://www.cicekse.com/izmir-cicek/mor-cicek_lg.jpg'
 				},
-				{
-					title: 'Kişi Yüz Arama',
-					icon: 'mdi-attachment'
-				},
-			],
-			cards: [
-				{
-					title: 'Anasayfa',
-					subtitle: 'dneemeee'
-				},
-				{
-					title: 'Kişi Ekle',
-					subtitle: 'denemeeeeee'
-				},
-				{
-					title: 'kişileri Listele',
-					subtitle: 'denemeeeeeeee'
-				},
-			],
-			displayNavBar: "display:none"
+			]
 		}
 	},
-	methods: {
-		showOrHideMenu() {
-			if (this.displayNavBar === "display:none") {
-				this.displayNavBar = "display:block"
-			} else {
-				this.displayNavBar = "display:none"
-			}
-		}
-	}
 }
 </script>
 
 <style>
 #cont {
 	height: fit-content;
-
 }
 
+#card {
+	margin: 15px;
+}
 
 </style>
+
