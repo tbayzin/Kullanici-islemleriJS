@@ -2,7 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify';
 import VueRouter from 'vue-router'
+import Trend from "vuetrend"
 
+Vue.use(Trend)
 
 //componentlerimizi import ediyoruz.
 import Dashboard from "@/components/Dashboard";
@@ -53,7 +55,6 @@ const router = new VueRouter({
 
 	]
 });
-
 
 new Vue({
 	vuetify,
