@@ -3,6 +3,12 @@
 		:fluid="true"
 		id="cont"
 	>
+
+
+
+
+
+
 		<v-row>
 			<v-col>
 				<v-row>
@@ -35,9 +41,7 @@
 <script>
 export default {
 	name: 'Dashboard',
-
 	data() {
-
 		return {
 			cardItems: [
 				{
@@ -65,10 +69,7 @@ export default {
 #cont {
 	height: fit-content;
 }
-
 #card {
 	margin: 15px;
 }
-
 </style>
-

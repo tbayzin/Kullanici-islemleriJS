@@ -76,6 +76,7 @@ export default {
 				{title: 'Kişi Ekle', icon: 'mdi-account-plus', url: '/kisiEkle'},
 				{title: 'kişi Listele', icon: 'mdi-account-group',url:'/kisiListesi'},
 				{title: 'Kişi Yüz Arama', icon: 'mdi-attachment',url:'kisiYuzSorgulama'},
+				{title: 'Uygulama Hakkinda', icon: 'mdi-information',url:'/Hakkinda'},
 			],
 			displayNavBar: "display:none"
 		}
