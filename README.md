@@ -90,6 +90,7 @@ Link: https://50projects50days.com/projects/progress-steps/
 
 [Sena'nın Reposu İçin Tıklayınız.](https://github.com/akpiinar/progress-step)
 
+[Tarık Repo](https://github.com/tbayzin/Progress-stepsJS)
 
 **2- Hidden Search Widget**
 
