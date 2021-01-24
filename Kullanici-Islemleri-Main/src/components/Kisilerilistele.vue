@@ -1,3 +1,3 @@
 <template>
-kisilerilistele
+	<p>kişi</p>
 </template>
