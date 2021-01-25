@@ -97,6 +97,7 @@ Link: https://50projects50days.com/projects/progress-steps/
 Kişi listesinde kullanılacak arama widgeti.
 
 Link:  https://50projects50days.com/projects/hidden-search-widget/
+
 [Sena'nın reposu için Tıklayınız](https://github.com/akpinar/hidden-search.git)
 
 
