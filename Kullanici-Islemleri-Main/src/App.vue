@@ -1,7 +1,5 @@
 <template>
-	<v-container
-		fluid
-	>
+
 		<v-app>
 			<v-card>
 				<v-app-bar
@@ -49,18 +47,12 @@
 				</v-col>
 			</v-row>
 			<!--				main.js içinde verdiğimiz path isimlerine göre sayfalara yönlendirmeyi sağlaması için router-view tagını açıyoruz.-->
-
-
 		</v-app>
-	</v-container>
 </template>
 
 <script>
 export default {
 	name: 'App',
-
-	components: {
-	},
 	data() {
 		return {
 			//side bar itemleri,iconları ve url uzantılarını buradan alıyoruz.

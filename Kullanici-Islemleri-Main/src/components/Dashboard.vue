@@ -1,8 +1,8 @@
 <template>
 	<v-container
-		:fluid="true"
-		id="cont"
-	>
+		id="cont">
+<!--		:fluid="true"-->
+
 <!--		<v-row>-->
 <!--			<v-col>-->
 <!--				&lt;!&ndash;// Spark line&ndash;&gt;-->

@@ -92,12 +92,22 @@
 					</v-col>
 				</v-row>
 				<v-row>
+					<v-col lg="2">
 					<v-btn
-						color="success"
+						color="info"
 						@click="addPersons"
 
-					>Kaydet
+					>
+						Kaydet
 					</v-btn>
+					</v-col>
+				<v-col lg="2">
+					<v-alert
+						type="success"
+						v-if="completed"
+					>Kaydedildi</v-alert>
+				</v-col>
+
 				</v-row>
 			</v-app>
 		</v-form>
@@ -135,6 +145,7 @@ export default {
 			personSurname: '',
 			phoneNumber: '',
 			eMail: '',
+			completed: false
 
 
 		}
@@ -155,66 +166,47 @@ export default {
 			this.phoneNumber = ''
 			this.eMail = ''
 			this.date = ''
-		}
+			this.completed = true
 
-	},
-	mounted() {
-		if (localStorage.getItem('personNames')) {
-			this.personNames = JSON.stringify(localStorage.getItem('personNames'))
-		}
-		if (localStorage.getItem('personSurnames')) {
-			this.personSurname = JSON.stringify(localStorage.getItem('personSurnames'))
-
-		}
-		if (localStorage.getItem('phoneNumbers')) {
-			this.phoneNumbers = JSON.stringify(localStorage.getItem('phoneNumbers'))
-
-		}
-		if (localStorage.getItem('eMails')) {
-			this.eMails = JSON.stringify(localStorage.getItem('eMails'))
-		}
-		if (localStorage.getItem('birthDates')) {
-			this.birthDates = JSON.stringify(localStorage.getItem('birthDates'))
-		}
-	},
-
-	watch: {
-		menu(val) {
-			val && setTimeout(() => (this.$refs.picker.activePicker = 'YEAR'))
 		},
-		personNames: {
-			handler() {
-				localStorage.setItem('personNames', JSON.stringify(this.personNames))
+		watch: {
+			menu(val) {
+				val && setTimeout(() => (this.$refs.picker.activePicker = 'YEAR'))
 			},
-			deep: true
-		},
-		personSurnames: {
-			handler() {
-				localStorage.setItem('personSurnames', JSON.stringify(this.personSurnames))
+			personNames: {
+				handler() {
+					localStorage.setItem('personNames', JSON.stringify(this.personNames))
+				},
+				deep: true
 			},
-			deep: true
+			personSurnames: {
+				handler() {
+					localStorage.setItem('personSurnames', JSON.stringify(this.personSurnames))
+				},
+				deep: true
+
+			},
+			phoneNumbers: {
+				handler() {
+					localStorage.setItem('phoneNumbers', JSON.stringify(this.phoneNumbers))
+				}
+			},
+			eMails: {
+				handler() {
+					localStorage.setItem('eMails', JSON.stringify(this.eMails))
+				}
+			},
+			birthDates: {
+				handler() {
+					localStorage.setItem('birthDates', JSON.stringify(this.birthDates))
+				}
+			}
+
 
 		},
-		phoneNumbers: {
-			handler() {
-				localStorage.setItem('phoneNumbers', JSON.stringify(this.phoneNumbers))
-			}
-		},
-		eMails: {
-			handler() {
-				localStorage.setItem('eMails', JSON.stringify(this.eMails))
-			}
-		},
-		birthDates: {
-			handler() {
-				localStorage.setItem('birthDates', JSON.stringify(this.birthDates))
-			}
-		}
 
 
-	},
-
-
+	}
 }
 </script>
 
