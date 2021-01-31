@@ -67,18 +67,18 @@ export default {
 			cardItems: [
 				{
 					title: 'Anasayfa',
-					subtitle: 'dneemeee',
-					image: 'https://cankayacicekcilik.com.tr/images/urun/b_11667829_-beyaz-papatya-kutusu-cicek-siparisi-min.jpg'
+					subtitle: 'Ana sayfaya dönün',
+					image: 'images/index.png'
 				},
 				{
 					title: 'Kişi Ekle',
-					subtitle: 'denemeeeeee',
-					image: 'https://cdn03.ciceksepeti.com/cicek/at4273-1/XL/11-li-kirmizi-gul-cicek-buketi-at4273-1-bf4868a0836d4c5898c8f8a1366ed969.jpg'
+					subtitle: 'Kişi ekleme sayfası',
+					image: 'images/personadd.png'
 				},
 				{
-					title: 'kişi Listele',
-					subtitle: 'denemeeeeeeee',
-					image: 'https://www.cicekse.com/izmir-cicek/mor-cicek_lg.jpg'
+					title: 'Kişi Listele',
+					subtitle: 'Kişileri görün',
+					image: 'images/peoplelist.jpg'
 				},
 			]
 		}
