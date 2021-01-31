@@ -100,6 +100,8 @@ Link:  https://50projects50days.com/projects/hidden-search-widget/
 
 [Sena'nın reposu için Tıklayınız](https://github.com/akpinar/hidden-search.git)
 
+[Tarık Repo](https://github.com/tbayzin/Hidden-Search-Bar)
+
 
 **3- Blurry Loading**
 
