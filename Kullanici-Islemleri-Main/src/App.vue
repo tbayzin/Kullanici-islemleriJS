@@ -58,7 +58,7 @@ export default {
 			//side bar itemleri,iconları ve url uzantılarını buradan alıyoruz.
 			items: [
 				{title: 'Anasayfa', icon: 'mdi-view-dashboard', url: '/'},
-				{title: 'Kişi Ekle', icon: 'mdi-account-plus', url: '/kisiEkle'},
+				{title: 'kişi Ekle', icon: 'mdi-account-plus', url: '/kisiEkle'},
 				{title: 'kişi Listele', icon: 'mdi-account-group', url: '/kisiListesi'},
 				{title: 'Kişi Yüz Arama', icon: 'mdi-attachment', url: 'kisiYuzSorgulama'},
 				{title: 'Uygulama Hakkinda', icon: 'mdi-information', url: '/Hakkinda'},
