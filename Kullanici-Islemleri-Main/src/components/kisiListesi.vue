@@ -29,14 +29,16 @@
 						</thead>
 						<tbody>
 						<tr
-							v-for="(item,i) in personNames"
+							v-for="(item,i) in persons"
 							:key="item"
 						>
-							<td>{{personNames[i]}}</td>
-							<td>{{personSurnames[i]}}</td>
-							<td>{{phoneNumbers[i]}}</td>
-							<td>{{birthDates[i]}}</td>
-							<td>{{eMails[i]}}</td>
+							<td>{{ persons[i].name }}</td>
+							<td>{{ persons[i].surname }}</td>
+							<td>{{ persons[i].phoneNumber }}</td>
+							<td>{{ persons[i].birthDate }}</td>
+							<td>{{ persons[i].eMail }}</td>
+
+
 						</tr>
 						</tbody>
 					</template>
@@ -55,33 +57,16 @@ export default {
 	data() {
 		return {
 
-			personNames: [],
-			personSurnames: [],
-			eMails: [],
-			phoneNumbers: [],
-			birthDates: [],
+			persons: []
 
 
 		}
 	},
 	created() {
-		if (localStorage.getItem('personNames')) {
-			this.personNames = JSON.parse(localStorage.getItem('personNames'))
+		if (localStorage.getItem('persons')) {
+			this.persons = JSON.parse(localStorage.getItem('persons'))
+			console.log(this.persons)
 
-		}
-		if (localStorage.getItem('personSurnames')) {
-			this.personSurnames = JSON.parse(localStorage.getItem('personSurnames'))
-
-		}
-		if (localStorage.getItem('phoneNumbers')) {
-			this.phoneNumbers = JSON.parse(localStorage.getItem('phoneNumbers'))
-
-		}
-		if (localStorage.getItem(	'eMails')) {
-			this.eMails = JSON.parse(localStorage.getItem('eMails'))
-		}
-		if (localStorage.getItem('birthDates')) {
-			this.birthDates = JSON.parse(localStorage.getItem('birthDates'))
 		}
 	}
 

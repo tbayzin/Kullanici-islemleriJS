@@ -7,7 +7,7 @@
 
 			<v-app id="inspire">
 				<v-row>
-					<v-col lg="4">
+					<v-col lg="4" class="ma-0">
 						<v-text-field
 							label="Ad*"
 							:rules="rules"
@@ -20,7 +20,7 @@
 							clearable
 						></v-text-field>
 					</v-col>
-					<v-col lg="4">
+					<v-col lg="4" class="ma-0">
 						<v-text-field
 							label="Soyad*"
 							:rules="rules"
@@ -33,7 +33,7 @@
 							clearable
 						></v-text-field>
 					</v-col>
-					<v-col lg="4">
+					<v-col lg="4" class="ma-0">
 						<v-menu
 							ref="menu"
 							v-model="menu"
@@ -46,7 +46,7 @@
 							<template v-slot:activator="{ on, attrs }">
 								<v-text-field
 									v-model="date"
-									label="Birthday date"
+									label="Doğum Tarihi"
 									prepend-inner-icon="mdi-calendar"
 									readonly
 									v-bind="attrs"
@@ -70,7 +70,8 @@
 
 				</v-row>
 				<v-row>
-					<v-col>
+					<v-col class="ma-0"
+					>
 						<v-text-field
 							label="telefon"
 							:rules="telephoneRules"
@@ -83,8 +84,9 @@
 							clearable
 						></v-text-field>
 					</v-col>
-					<v-col>
+					<v-col class="ma-0">
 						<v-file-input
+							prepend-icon=""
 							counter
 							label="File input"
 							multiple
@@ -94,7 +96,7 @@
 							:show-size="1000"
 						></v-file-input>
 					</v-col>
-					<v-col>
+					<v-col class="ma-0">
 						<v-text-field
 							label="E-mail"
 							:rules="eMailRules"
@@ -164,14 +166,11 @@ export default {
 			date: null,
 			menu: false,
 			mdiPhone: mdiPhone,
-			personNames: [],
-			phoneNumbers: [],
-			personSurnames: [],
-			eMails: [],
-			birthDates: [],
+			persons: [],
 			personName: '',
 			personSurname: '',
 			phoneNumber: '',
+			birthDate: '',
 			eMail: '',
 			complete: false,
 			cmp: false
@@ -183,22 +182,35 @@ export default {
 			this.$refs.menu.save(date)
 		},
 		addPersons() {
-			this.cmp = true
-			if (this.personName === '' || this.personSurname === '') {
-				console.log("kkldfk")
+			// this.cmp = true
+			// if (this.personName === '' || this.personSurname === '' || this.personName==null || this.personSurname==null) {
+			// 	console.log("dkesfkşsdk")
+			// 	this.complete = false
+			// 	// this.phoneNumbers.push(this.phoneNumber);
+			// 	// this.eMails.push(this.eMail);
+			// 	// this.birthDates.push(this.date);
+			// 	console.log("2")
+			// }
+
+			// else {
+			if (this.persons.name===''|| this.persons.personSurname===''){
 				this.complete = false
-			} else {
-				this.personNames.push(this.personName);
-				this.personSurnames.push(this.personSurname);
-				this.phoneNumbers.push(this.phoneNumber);
-				this.eMails.push(this.eMail);
-				this.birthDates.push(this.date);
-				this.personName = ''
-				this.personSurname = ''
-				this.phoneNumber = ''
-				this.eMail = ''
-				this.date = ''
-				this.complete = true
+
+			}
+			else{
+			this.persons.push({
+				name: this.personName,
+				surname: this.personSurname,
+				phoneNumber: this.phoneNumber,
+				birthDate: this.birthDate,
+				eMail:this.eMail
+			});
+			this.personName = ''
+			this.personSurname = ''
+			this.phoneNumber = ''
+			this.birthDate = ''
+			this.eMail = ''
+			this.complete = true
 
 			}
 		},
@@ -207,33 +219,14 @@ export default {
 		menu(val) {
 			val && setTimeout(() => (this.$refs.picker.activePicker = 'YEAR'))
 		},
-		personNames: {
+		persons: {
 			handler() {
-				localStorage.setItem('personNames', JSON.stringify(this.personNames))
+				localStorage.setItem('persons', JSON.stringify(this.persons))
+
 			},
-			deep: true
+			// deep: true
 		},
-		personSurnames: {
-			handler() {
-				localStorage.setItem('personSurnames', JSON.stringify(this.personSurnames))
-			},
-			deep: true
-		},
-		phoneNumbers: {
-			handler() {
-				localStorage.setItem('phoneNumbers', JSON.stringify(this.phoneNumbers))
-			}
-		},
-		eMails: {
-			handler() {
-				localStorage.setItem('eMails', JSON.stringify(this.eMails))
-			}
-		},
-		birthDates: {
-			handler() {
-				localStorage.setItem('birthDates', JSON.stringify(this.birthDates))
-			}
-		}
+
 	},
 }
 </script>
