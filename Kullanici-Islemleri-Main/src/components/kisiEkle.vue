@@ -45,7 +45,7 @@
 						>
 							<template v-slot:activator="{ on, attrs }">
 								<v-text-field
-									v-model="date"
+									v-model="birthDate"
 									label="Doğum Tarihi"
 									prepend-inner-icon="mdi-calendar"
 									readonly
@@ -59,7 +59,7 @@
 							</template>
 							<v-date-picker
 								ref="picker"
-								v-model="date"
+								v-model="birthDate"
 								:max="new Date().toISOString().substr(0, 10)"
 								min="1950-01-01"
 								@change="save"
@@ -115,7 +115,7 @@
 					<v-col lg="2">
 						<v-btn
 							color="warning"
-							@click="addPersons"
+							@click="addPerson"
 
 						>
 							Kaydet
@@ -163,68 +163,68 @@ export default {
 			eMailRules: [
 				value => /.+@+/.test(value)
 			],
-			date: null,
 			menu: false,
 			mdiPhone: mdiPhone,
-			persons: [],
+			person: {},
+			people: [],
 			personName: '',
 			personSurname: '',
 			phoneNumber: '',
-			birthDate: '',
 			eMail: '',
+			birthDate: null,
 			complete: false,
 			cmp: false
 
 		}
 	},
+
 	methods: {
 		save(date) {
 			this.$refs.menu.save(date)
 		},
-		addPersons() {
-			// this.cmp = true
-			// if (this.personName === '' || this.personSurname === '' || this.personName==null || this.personSurname==null) {
-			// 	console.log("dkesfkşsdk")
-			// 	this.complete = false
-			// 	// this.phoneNumbers.push(this.phoneNumber);
-			// 	// this.eMails.push(this.eMail);
-			// 	// this.birthDates.push(this.date);
-			// 	console.log("2")
-			// }
+		addPerson() {
+			if (this.personName === '' || this.personSurname === '') {
+				console.log("skldfjgkl")
+			} else {
+				this.person = {
+					uuid: this.uuidv4(),
+					name: this.personName,
+					surname: this.personSurname,
+					phoneNumber: this.phoneNumber,
+					birthDate: this.birthDate,
+					eMail: this.eMail
 
-			// else {
-			if (this.persons.name===''|| this.persons.personSurname===''){
-				this.complete = false
-
+				};
 			}
-			else{
-			this.persons.push({
-				name: this.personName,
-				surname: this.personSurname,
-				phoneNumber: this.phoneNumber,
-				birthDate: this.birthDate,
-				eMail:this.eMail
-			});
-			this.personName = ''
-			this.personSurname = ''
-			this.phoneNumber = ''
-			this.birthDate = ''
-			this.eMail = ''
-			this.complete = true
+			console.log(this.person)
+			this.people.push(this.person)
 
-			}
+
 		},
+		uuidv4() {
+			return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+				let r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+				return v.toString(16);
+			});
+		}
 	},
+	created() {
+		if (localStorage.getItem('people') !== null) {
+			this.people = JSON.parse(localStorage.getItem('people'))
+			console.log(this.people)
+		}
+
+	},
+
 	watch: {
 		menu(val) {
 			val && setTimeout(() => (this.$refs.picker.activePicker = 'YEAR'))
 		},
-		persons: {
+		person: {
 			handler() {
-				localStorage.setItem('persons', JSON.stringify(this.persons))
-
+				localStorage.setItem('people', JSON.stringify(this.people))
 			},
-			// deep: true
+			deep: true
 		},
 
 	},

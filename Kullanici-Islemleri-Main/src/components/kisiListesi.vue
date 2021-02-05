@@ -5,7 +5,7 @@
 	>
 		<div id="app">
 			<v-app id="inspire">
-				<v-simple-table height="300px">
+				<v-simple-table>
 					<template v-slot:default>
 						<thead>
 						<tr>
@@ -29,14 +29,14 @@
 						</thead>
 						<tbody>
 						<tr
-							v-for="(item,i) in persons"
-							:key="item"
+							v-for="person in people"
+							:key="person.uuid"
 						>
-							<td>{{ persons[i].name }}</td>
-							<td>{{ persons[i].surname }}</td>
-							<td>{{ persons[i].phoneNumber }}</td>
-							<td>{{ persons[i].birthDate }}</td>
-							<td>{{ persons[i].eMail }}</td>
+							<td>{{ person.name }}</td>
+							<td>{{ person.surname }}</td>
+							<td>{{ person.phoneNumber }}</td>
+							<td>{{ person.birthDate }}</td>
+							<td>{{ person.eMail }}</td>
 
 
 						</tr>
@@ -56,24 +56,20 @@ export default {
 
 	data() {
 		return {
-
-			persons: []
-
-
+			people: [],
 		}
 	},
 	created() {
-		if (localStorage.getItem('persons')) {
-			this.persons = JSON.parse(localStorage.getItem('persons'))
-			console.log(this.persons)
+		if (localStorage.getItem('people')) {
+			this.people = JSON.parse(localStorage.getItem('people'))
 
 		}
+
 	}
 
 
 }
 
-// console.log(localStorage.getItem('personNames'))
 </script>
 
 <style scoped>
