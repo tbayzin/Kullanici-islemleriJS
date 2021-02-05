@@ -37,6 +37,7 @@
 							<td>{{ person.phoneNumber }}</td>
 							<td>{{ person.birthDate }}</td>
 							<td>{{ person.eMail }}</td>
+							<td><v-icon @click="deletePerson(person.uuid)" v-text="mdiDelete"></v-icon></td>
 
 
 						</tr>
@@ -50,6 +51,7 @@
 
 <script>
 
+import {mdiDelete} from '@mdi/js';
 
 export default {
 	name: "kisiListesi",
@@ -57,11 +59,21 @@ export default {
 	data() {
 		return {
 			people: [],
+			mdiDelete: mdiDelete
 		}
 	},
 	created() {
 		if (localStorage.getItem('people')) {
 			this.people = JSON.parse(localStorage.getItem('people'))
+
+		}
+
+	},
+	methods:{
+		deletePerson(uuidPerson){
+			uuidPerson= localStorage.removeItem('people')
+			console.log(uuidPerson)
+
 
 		}
 
