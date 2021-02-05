@@ -7,7 +7,6 @@ import Dashboard from "@/components/Dashboard";
 import kisiEkle from "@/components/kisiEkle";
 import kisiListesi from "@/components/kisiListesi";
 import kisiYuzSorgulama from "@/components/kisiYuzSorgulama";
-import Hakkinda from "@/components/Hakkinda";
 
 
 
@@ -36,12 +35,6 @@ const router = new VueRouter({
 			path: '/kisiListesi',
 			components: {
 				default: kisiListesi
-			}
-		},
-		{
-			path: '/Hakkinda',
-			components: {
-				default: Hakkinda
 			}
 		},
 		{

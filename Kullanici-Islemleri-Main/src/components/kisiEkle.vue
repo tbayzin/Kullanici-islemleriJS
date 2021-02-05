@@ -1,6 +1,7 @@
 <template>
 	<v-container
 		id="container"
+		fluid
 
 	>
 		<v-form>
@@ -171,6 +172,7 @@ export default {
 			personSurname: '',
 			phoneNumber: '',
 			eMail: '',
+			personCounter:0,
 			birthDate: null,
 			complete: false,
 			cmp: false
@@ -183,18 +185,26 @@ export default {
 			this.$refs.menu.save(date)
 		},
 		addPerson() {
-			if (this.personName === '' || this.personSurname === '') {
+			if (this.personName === '') {
+				console.log("skldfjgkl")
+			} else if (this.personSurname === '') {
 				console.log("skldfjgkl")
 			} else {
+				this.personCounter++
 				this.person = {
 					uuid: this.uuidv4(),
 					name: this.personName,
 					surname: this.personSurname,
 					phoneNumber: this.phoneNumber,
 					birthDate: this.birthDate,
-					eMail: this.eMail
-
+					eMail: this.eMail,
+					totalPerson: this.personCounter
 				};
+				this.eMail = ''
+				this.phoneNumber = ''
+				this.personSurname = ''
+				this.personName = ''
+				this.birthDate = ''
 			}
 			console.log(this.person)
 			this.people.push(this.person)
@@ -219,6 +229,7 @@ export default {
 	watch: {
 		menu(val) {
 			val && setTimeout(() => (this.$refs.picker.activePicker = 'YEAR'))
+
 		},
 		person: {
 			handler() {
