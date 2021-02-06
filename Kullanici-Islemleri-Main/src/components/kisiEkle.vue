@@ -123,7 +123,7 @@
 						</v-btn>
 					</v-col>
 					<v-col></v-col>
-					<v-col lg="3">
+					<v-col lg="2">
 						<v-alert
 							type="success"
 							outlined
