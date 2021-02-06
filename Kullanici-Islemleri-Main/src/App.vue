@@ -1,24 +1,28 @@
 <template>
-	<v-app>
-		<v-card>
+	<v-app id="app">
+		<v-card
+		width="2000"
+		height="950">
 
 			<v-app-bar
-				dark
 				temporary
+				dark
 			>
 				<v-app-bar-nav-icon
 					@click.stop="drawer=!drawer">
 				</v-app-bar-nav-icon>
-				<v-toolbar-title>aflşs</v-toolbar-title>
 			</v-app-bar>
 			<v-navigation-drawer
 				v-model="drawer"
 				absolute
 				bottom
-				temporary>
+				temporary
+				dark
+			>
 				<v-list
 					nav
 					dense
+
 				>
 					<v-list-item-group
 						v-model="group"
@@ -88,5 +92,7 @@ export default {
 </script>
 
 <style>
-
+#app{
+	background-color: black;
+}
 </style>
