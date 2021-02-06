@@ -5,10 +5,9 @@
 
 	>
 		<v-form>
-
 			<v-app id="inspire">
 				<v-row>
-					<v-col lg="4" class="ma-0">
+					<v-col lg="3" class="ma-0">
 						<v-text-field
 							label="Ad*"
 							:rules="rules"
@@ -17,11 +16,10 @@
 							prepend-inner-icon="mdi-account"
 							v-model="personName"
 							outlined
-							shaped
 							clearable
 						></v-text-field>
 					</v-col>
-					<v-col lg="4" class="ma-0">
+					<v-col lg="3" class="ma-0">
 						<v-text-field
 							label="Soyad*"
 							:rules="rules"
@@ -30,11 +28,10 @@
 							prepend-inner-icon="mdi-account"
 							v-model="personSurname"
 							outlined
-							shaped
 							clearable
 						></v-text-field>
 					</v-col>
-					<v-col lg="4" class="ma-0">
+					<v-col lg="3" class="ma-0">
 						<v-menu
 							ref="menu"
 							v-model="menu"
@@ -54,8 +51,6 @@
 									v-on="on"
 									outlined
 									clearable
-									shaped
-
 								></v-text-field>
 							</template>
 							<v-date-picker
@@ -68,10 +63,9 @@
 						</v-menu>
 					</v-col>
 
-
 				</v-row>
 				<v-row>
-					<v-col class="ma-0"
+					<v-col lg="3" class="ma-0"
 					>
 						<v-text-field
 							label="telefon"
@@ -81,11 +75,10 @@
 							prepend-inner-icon="mdi-phone"
 							v-model="phoneNumber"
 							outlined
-							shaped
 							clearable
 						></v-text-field>
 					</v-col>
-					<v-col class="ma-0">
+					<v-col lg="3" class="ma-0">
 						<v-file-input
 							prepend-icon=""
 							counter
@@ -93,11 +86,10 @@
 							multiple
 							prepend-inner-icon="mdi-paperclip"
 							outlined
-							shaped
 							:show-size="1000"
 						></v-file-input>
 					</v-col>
-					<v-col class="ma-0">
+					<v-col lg="3" class="ma-0">
 						<v-text-field
 							label="E-mail"
 							:rules="eMailRules"
@@ -106,7 +98,6 @@
 							prepend-inner-icon="mdi-email"
 							v-model="eMail"
 							outlined
-							shaped
 							clearable
 						></v-text-field>
 					</v-col>
@@ -115,15 +106,17 @@
 				<v-row>
 					<v-col lg="2">
 						<v-btn
-							color="warning"
+							color="success"
+							outlined
 							@click="addPerson"
 
 						>
 							Kaydet
 						</v-btn>
 					</v-col>
-					<v-col></v-col>
-					<v-col lg="2">
+				</v-row>
+				<v-row>
+					<v-col lg="3">
 						<v-alert
 							type="success"
 							outlined
@@ -142,6 +135,7 @@
 						</v-alert>
 					</v-col>
 				</v-row>
+
 			</v-app>
 		</v-form>
 	</v-container>
@@ -185,11 +179,11 @@ export default {
 			this.$refs.menu.save(date)
 		},
 		addPerson() {
-			if (this.personName === '') {
+			this.cmp=true
+			if (this.personName === '' || this.personSurname==='' ) {
 				console.log("skldfjgkl")
-			} else if (this.personSurname === '') {
-				console.log("skldfjgkl")
-			} else {
+
+			}  else {
 				this.personCounter++
 				this.person = {
 					uuid: this.uuidv4(),
@@ -205,6 +199,8 @@ export default {
 				this.personSurname = ''
 				this.personName = ''
 				this.birthDate = ''
+				this.complete=true
+
 			}
 			console.log(this.person)
 			this.people.push(this.person)
