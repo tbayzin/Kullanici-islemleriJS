@@ -52,47 +52,46 @@
 										>
 										</v-icon>
 									</template>
-									<v-card>
+									<v-card
+										v-for="person in people"
+										:key="person.uuid">
 										<v-card-text>
-											<v-container>
-												<v-row>
-													<v-col
-														cols="12"
-													>
+											<v-container
+											>
+												<v-row
+												>
+													<v-col cols="6">
 														<v-text-field
 															required
-															v-text="person.name"
-														></v-text-field>
+															v-model="person.name"
+														>{{ person.name }}
+														</v-text-field>
 													</v-col>
-													<v-col
-														cols="12"
-
-													>
+													<v-col cols="6">
 														<v-text-field
 															required
-															v-text="person.surname"
-														></v-text-field>
+															v-model="person.surname"
+														>{{ person.surname }}
+														</v-text-field>
 													</v-col>
-
-													<v-col cols="12">
+													<v-col cols="6">
 														<v-text-field
 															label="Email*"
-															required
-															v-text="person.eMail"
-														></v-text-field>
+															v-model="person.eMail"
+														>{{ person.eMail }}
+														</v-text-field>
 													</v-col>
-													<v-col cols="12">
+													<v-col cols="6">
 														<v-text-field
 															label="Telefon"
-															v-text="person.phoneNumber"
-															required
-														></v-text-field>
+															v-model="person.phoneNumber"
+														>{{ person.phoneNumber }}
+														</v-text-field>
 													</v-col>
-													<v-col
-														cols="12"
-
+													<v-col cols="12"
 													>
 														<v-text-field
+
 															label="Email*"
 															required
 															@change="person.name"
@@ -101,21 +100,20 @@
 
 												</v-row>
 											</v-container>
-											<small>*indicates required field</small>
 										</v-card-text>
 										<v-card-actions>
 											<v-spacer></v-spacer>
 											<v-btn
 												color="blue darken-1"
 												text
-												@click="dialog = false"
+												@click="disableEditing"
 											>
 												Close
 											</v-btn>
 											<v-btn
 												color="blue darken-1"
 												text
-												@click="dialog = false"
+												@click="saveEdit(person.uuid)"
 											>
 												Save
 											</v-btn>
@@ -126,8 +124,6 @@
 							<td>
 								<v-icon @click="deletePerson(person.uuid)" v-text="mdiDelete"></v-icon>
 							</td>
-
-
 						</tr>
 						<v-row>
 							<v-col lg="4">
@@ -153,7 +149,6 @@
 <script>
 
 import {mdiDelete, mdiPencil} from '@mdi/js';
-// import Vue from 'vue'
 
 export default {
 	name: "kisiListesi",
@@ -164,7 +159,14 @@ export default {
 			mdiDelete: mdiDelete,
 			deletionCompleted: false,
 			mdiPencil: mdiPencil,
-			dialog: false
+			dialog: false,
+			organizedName: '',
+			organizedSurname: '',
+			organizedEmail: '',
+			organizedPhoneNumber: '',
+			editing: false,
+			editingPerson: ''
+
 		}
 	},
 	created: function () {
@@ -176,11 +178,11 @@ export default {
 
 	},
 	methods: {
-		deletePerson(deletedPerson) {
+		deletePerson(deletedPersonUUID) {
 			let peopleArray = JSON.parse(localStorage.getItem('people'));
 			// console.log(peopleArray)
 			for (let i = 0; i < peopleArray.length; i++) {
-				if (deletedPerson === peopleArray[i].uuid) {
+				if (deletedPersonUUID === peopleArray[i].uuid) {
 					peopleArray.splice(i, 1)
 					this.people.splice(i, 1)
 					// console.log("people", this.people[i])
@@ -197,10 +199,65 @@ export default {
 
 		},
 
-		editPerson(organizedPerson) {
-			console.log("organized person", organizedPerson)
+		// editPerson() {
+		//
+		// 	// for (let i = 0; i < this.people.length; i++) {
+		// 	// 	if (editPersonUUID === this.people[i].uuid) {
+		// 	// 		this.organizedName = this.people[i].name
+		// 	// 		this.organizedSurname=this.people[i].surname
+		// 	// 		this.organizedEmail=this.people[i].eMail
+		// 	// 		this.organizedPhoneNumber=this.people[i].phoneNumber
+		// 	//
+		// 	// 	}
+		// 	// }
+		//
+		//
+		// },
+		//		// disableEditing(personUUID){
+		// 	for (let i =0;i<this.people.length;i++){
+		// 		if(personUUID===this.people[i].uuid){
+		// 			this.people[i].name=null
+		// 			this.people[i].surname=null
+		// 			this.people[i].phoneNumber=null
+		// 			this.people[i].eMail=null
+		// 		}
+		// 	}
+		//
+		// 	this.editing=false
+		// 	this.dialog=false
+		// }
+		saveEdit(savePerson) {
 
+			for (let i = 0; i < this.people.length; i++) {
+			// let i =3;
+				if (savePerson === this.people[i].uuid) {
+					// this.people[i].name=this.organizedName
+					this.organizedName = this.people[i].name
+					// this.people.push(this.people[i].name)
+					this.organizedSurname=this.people[i].surname
+					this.organizedEmail=this.people[i].eMail
+					this.organizedPhoneNumber=this.people[i].phoneNumber
+					this.dialog = false
+					// this.disableEditing()
+
+				}
+
+			}
+		},
+		disableEditing(personUUID){
+			for (let i =0;i<this.people.length;i++){
+				if(personUUID===this.people[i].uuid){
+					this.people[i].name=null
+					this.people[i].surname=null
+					this.people[i].phoneNumber=null
+					this.people[i].eMail=null
+				}
+			}
+
+			this.editing=false
+			this.dialog=false
 		}
+
 
 	}
 
